@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<style type="text/css">
+	body{
+		font-family: Arial,sans-serif;
+		background-color: #f2f2f2;
+		text-align: center;
+	}
+	h1{
+		color: #333;
+	}
+	.container{
+		margin-top: 50px;
+	}
+	.input-group{
+		margin-bottom: 20px;
+	}
+	.input-group input{
+		width: 300px;
+		padding: 10px;
+		font-size: 16px;
+	}
+	.input-group button {
+		padding: 10px 20px;
+		font-size: 16px;
+		background-color: #333;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+	}
+</style>
+<body>
+	<h1>Text to speech example</h1>
+<div class="container">
+	<div  class="input-group">
+		<input type="text" id="inputText" placeholder="Enter Your Text">
+		<button onclick="speak()">Speak</button>
+	</div>
+</div>	
+<script type="text/javascript">
+	function speak(){
+		var inputText =document.getElementById("inputText").value;
+
+		if('speechSynthesis' in window){
+			var speech = new SpeechSynthesisUtterance();
+			speech.text=inputText;
+
+			speech.lang ='en-Us';
+			speech.volume =1;
+			speech.rate =1;
+			speech.pitch =1;
+
+			window.speechSynthesis.speak(speech);
+		}
+		else {
+			alert("Speech Synthesis Is Not Supported In This Browser")
+		}
+	}
+</script>
+</body>
+</html>

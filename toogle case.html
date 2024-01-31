@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BULB</title>
+</head>
+<body>
+	<h4>Bulb On OFF on click Using toogle Function</h4>
+
+<img id="lightBulb" src="bulb_off.jpg" onclick="toggleLightBulb()">
+
+
+<script type="text/javascript">
+
+function toggleLightBulb() {
+  var bulb = document.getElementById("lightBulb");
+  
+  if (bulb.src.endsWith("bulb_off.jpg")) {
+    bulb.src = "bulb_on.jpg";
+  } else {
+    bulb.src = "bulb_off.jpg";
+  }
+}
+
+
+</script>
+</body>
+</html>
